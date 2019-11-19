@@ -1,0 +1,66 @@
+@bg: #f8104d;
+@hover: #281f55;
+@color: #fff;
+@width: 20vw;
+
+.diamond {
+  margin: 50px auto;
+  width: 20vw;
+  position: relative;
+  height: 20vw;
+  overflow: hidden;
+  -webkit-transform: rotate(45deg) perspective(999px) translateZ(1px);
+  transform: rotate(45deg) perspective(999px) translateZ(1px);
+  background: #f8104d;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: @width/2 solid @color;
+    border-right: @width/2 solid transparent;
+  }
+  &:hover + .bg{
+    background: @hover;
+  }
+  &:hover{
+    &:after {
+      border-top: @width/2 solid @hover;
+    }
+  }
+}  
+span{
+  font-size: 17vw;
+  color: @color;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.bg {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+
